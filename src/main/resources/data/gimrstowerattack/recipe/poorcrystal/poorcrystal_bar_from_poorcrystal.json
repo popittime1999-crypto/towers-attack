@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "expetirnce": 0.25,
+  "group": "poorcrystal",
+  "ingredient": {
+    "item": "gimrstowerattack:poorcrystal"
+  },
+  "result":{
+    "count": 1,
+    "id": "gimrstowerattack:poorcrystal_bar"
+  }
+}

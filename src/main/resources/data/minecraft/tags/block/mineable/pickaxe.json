@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "gimrstowerattack:badcrystal_block",
+    "gimrstowerattack:poorcrystal_block",
+    "gimrstowerattack:badcrystal_bar_block",
+    "gimrstowerattack:poorcrystal_bar_block"
+
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 150,
+  "expetirnce": 0.25,
+  "group": "poorcrystal",
+  "ingredient": {
+    "item": "gimrstowerattack:finecrystal"
+  },
+  "result":{
+    "count": 1,
+    "id": "gimrstowerattack:finecrystal_bar"
+  }
+}

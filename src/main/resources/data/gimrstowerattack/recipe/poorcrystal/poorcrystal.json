@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gimrstowerattack:poorcrystal_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "gimrstowerattack:poorcrystal"
+  }
+}
