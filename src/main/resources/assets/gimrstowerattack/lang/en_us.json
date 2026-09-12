@@ -1,23 +1,7 @@
 {
-  "item.gimrstowerattack.badcrystal": "Soul crystal (Grade E)",
-  "item.gimrstowerattack.poorcrystal": "Soul crystal (Grade D)",
-  "item.gimrstowerattack.finecrystal": "Soul crystal (Grade C)",
-
-  "item.gimrstowerattack.badcrystal_bar": "Soul Bar (Grade E)",
-  "item.gimrstowerattack.poorcrystal_bar": "Soul Bar (Grade D)",
-  "item.gimrstowerattack.finecrystal_bar": "Soul Bar (Grade C)",
-
-  "block.gimrstowerattack.badcrystal_block": "Soul Crystal Block (Grade E)",
-  "block.gimrstowerattack.poorcrystal_block": "Soul Crystal Block (Grade D)",
-  "block.gimrstowerattack.finecrystal_block": "Soul Crystal Block (Grade C)",
-
-  "block.gimrstowerattack.badcrystal_bar_block": "Soul Crystal Brick (Grade E)",
-  "block.gimrstowerattack.poorcrystal_bar_block": "Soul Crystal Brick (Grade D)",
-  "block.gimrstowerattack.finecrystal_bar_block": "Soul Crystal Brick (Grade C)",
-
-  "item.gimrstowerattack.block_chisel": "Block Chisel",
-
-  "creative_tab.gimrstowerattack.tower_items": "Tower Items",
-  "creative_tab.gimrstowerattack.tower_blocks": "Tower Blocks"
-
+  "item.gimrstowerattack.lowxpscroll": "Low Xp Scroll",
+  "item.gimrstowerattack.midxpscroll": "Mid Xp Scroll",
+  "item.gimrstowerattack.highxpscroll": "High Xp Scroll",
+  "item.gimrstowerattack.godxpscroll": "God Xp Scroll",
+  "creative_tab.gimrstowerattack.xp_scroll": "XP Scrolls"
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gimrstowerattack:item/block_chisel"
+    "layer0": "gimrstowerattack:item/highxpscroll"
   }
 }

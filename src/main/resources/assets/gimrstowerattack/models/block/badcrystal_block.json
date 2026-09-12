@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "gimrstowerattack:block/badcrystal_block"
-  }
-}

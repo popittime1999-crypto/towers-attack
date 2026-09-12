@@ -1,14 +1,13 @@
 package com.gimr12.towers_attack;
 
-import com.gimr12.towers_attack.block.ModBlocks;
 import com.gimr12.towers_attack.item.ModCreativeModeTabs;
 import com.gimr12.towers_attack.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import org.slf4j.Logger;
-
+import com.gimr12.towers_attack.attachment.ModAttachments;
 import com.mojang.logging.LogUtils;
-
+import com.gimr12.towers_attack.attachment.ModAttachments;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -42,11 +41,12 @@ public class towers_attack {
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register((modEventBus));
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+        ModAttachments.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
