@@ -5,7 +5,6 @@ import com.gimr12.towers_attack.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import org.slf4j.Logger;
-import com.gimr12.towers_attack.attachment.ModAttachments;
 import com.mojang.logging.LogUtils;
 import com.gimr12.towers_attack.attachment.ModAttachments;
 import net.neoforged.api.distmarker.Dist;
@@ -63,7 +62,7 @@ public class towers_attack {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartedEvent event){
-
+        com.gimr12.towers_attack.titles.TitleManager.load(event.getServer());
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
