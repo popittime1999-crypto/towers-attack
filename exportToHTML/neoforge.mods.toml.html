@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>neoforge.mods.toml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+neoforge.mods.toml</font>
+</center></td></tr></table>
+<pre><span class="s0"># This is an example neoforge.mods.toml file. It contains the data relating to the loading mods.</span>
+<span class="s0"># There are several mandatory fields (#mandatory), and many more that are optional (#optional).</span>
+<span class="s0"># The overall format is standard TOML format, v0.5.0.</span>
+<span class="s0"># Note that there are a couple of TOML lists in this file.</span>
+<span class="s0"># Find more information on toml format here:  https://github.com/toml-lang/toml</span>
+
+<span class="s0"># The name of the mod loader type to load - for regular FML @Mod mods it should be javafml</span>
+<span class="s2">modLoader</span><span class="s1">=</span><span class="s3">&quot;javafml&quot; </span><span class="s0">#mandatory</span>
+
+<span class="s0"># A version range to match for said mod loader - for regular FML @Mod it will be the FML version. This is currently 2.</span>
+<span class="s2">loaderVersion</span><span class="s1">=</span><span class="s3">&quot;[1,)&quot; </span><span class="s0">#mandatory</span>
+
+<span class="s0"># The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.</span>
+<span class="s0"># Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.</span>
+<span class="s2">license</span><span class="s1">=</span><span class="s3">&quot;MIT&quot;</span>
+
+<span class="s0"># A URL to refer people to when problems occur with this mod</span>
+<span class="s0">#issueTrackerURL=&quot;https://change.me.to.your.issue.tracker.example.invalid/&quot; #optional</span>
+
+<span class="s0"># A list of mods - how many allowed here is determined by the individual mod loader</span>
+<span class="s1">[[</span><span class="s2">mods</span><span class="s1">]] </span><span class="s0">#mandatory</span>
+
+<span class="s0"># The modid of the mod</span>
+<span class="s2">modId</span><span class="s1">=</span><span class="s3">&quot;gimrstowerattack&quot; </span><span class="s0">#mandatory</span>
+
+<span class="s0"># The version number of the mod</span>
+<span class="s2">version</span><span class="s1">=</span><span class="s3">&quot;0.0.1&quot; </span><span class="s0">#mandatory</span>
+
+<span class="s0"># A display name for the mod</span>
+<span class="s2">displayName</span><span class="s1">=</span><span class="s3">&quot;Tower Attack&quot; </span><span class="s0">#mandatory</span>
+
+<span class="s0"># A URL to query for updates for this mod. See the JSON update specification https://docs.neoforged.net/docs/misc/updatechecker/</span>
+<span class="s0">#updateJSONURL=&quot;https://change.me.example.invalid/updates.json&quot; #optional</span>
+
+<span class="s0"># A URL for the &quot;homepage&quot; for this mod, displayed in the mod UI</span>
+<span class="s0">#displayURL=&quot;https://change.me.to.your.mods.homepage.example.invalid/&quot; #optional</span>
+
+<span class="s0"># A file name (in the root of the mod JAR) containing a logo for display</span>
+<span class="s0">#logoFile=&quot;examplemod.png&quot; #optional</span>
+
+<span class="s0"># A text field displayed in the mod UI</span>
+<span class="s0">#credits=&quot;&quot; #optional</span>
+
+<span class="s0"># The authors of the mod, displayed in the mod UI (optional)</span>
+<span class="s0">#authors=&quot;&quot;</span>
+
+<span class="s0"># The description text for the mod (multi line!) (#mandatory)</span>
+<span class="s2">description</span><span class="s1">=</span><span class="s3">''' 
+Example mod description. 
+'''</span>
+
+<span class="s0"># The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.</span>
+<span class="s0">#[[mixins]]</span>
+<span class="s0">#config=&quot;gimrstowerattack.mixins.json&quot;</span>
+
+<span class="s0"># The [[accessTransformers]] block allows you to declare where your AT file is.</span>
+<span class="s0"># If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg</span>
+<span class="s0">#[[accessTransformers]]</span>
+<span class="s0">#file=&quot;META-INF/accesstransformer.cfg&quot;</span>
+
+<span class="s0"># The coremods config file path is not configurable and is always loaded from META-INF/coremods.json</span>
+
+<span class="s0"># A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.</span>
+<span class="s1">[[</span><span class="s2">dependencies</span><span class="s1">.</span><span class="s2">gimrstowerattack</span><span class="s1">]] </span><span class="s0">#optional</span>
+    <span class="s0"># the modid of the dependency</span>
+    <span class="s2">modId</span><span class="s1">=</span><span class="s3">&quot;neoforge&quot; </span><span class="s0">#mandatory</span>
+    <span class="s0"># The type of the dependency. Can be one of &quot;required&quot;, &quot;optional&quot;, &quot;incompatible&quot; or &quot;discouraged&quot; (case insensitive).</span>
+    <span class="s0"># 'required' requires the mod to exist, 'optional' does not</span>
+    <span class="s0"># 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning</span>
+    <span class="s2">type</span><span class="s1">=</span><span class="s3">&quot;required&quot; </span><span class="s0">#mandatory</span>
+    <span class="s0"># Optional field describing why the dependency is required or why it is incompatible</span>
+    <span class="s0"># reason=&quot;...&quot;</span>
+    <span class="s0"># The version range of the dependency</span>
+    <span class="s2">versionRange</span><span class="s1">=</span><span class="s3">&quot;[21.0.167,)&quot; </span><span class="s0">#mandatory</span>
+    <span class="s0"># An ordering relationship for the dependency.</span>
+    <span class="s0"># BEFORE - This mod is loaded BEFORE the dependency</span>
+    <span class="s0"># AFTER - This mod is loaded AFTER the dependency</span>
+    <span class="s2">ordering</span><span class="s1">=</span><span class="s3">&quot;NONE&quot;</span>
+    <span class="s0"># Side this dependency is applied on - BOTH, CLIENT, or SERVER</span>
+    <span class="s2">side</span><span class="s1">=</span><span class="s3">&quot;BOTH&quot;</span>
+
+<span class="s0"># Here's another dependency</span>
+<span class="s1">[[</span><span class="s2">dependencies</span><span class="s1">.</span><span class="s2">gimrstowerattack</span><span class="s1">]]</span>
+    <span class="s2">modId</span><span class="s1">=</span><span class="s3">&quot;minecraft&quot;</span>
+    <span class="s2">type</span><span class="s1">=</span><span class="s3">&quot;required&quot;</span>
+    <span class="s0"># This version range declares a minimum of the current minecraft version up to but not including the next major version</span>
+    <span class="s2">versionRange</span><span class="s1">=</span><span class="s3">&quot;[1.21]&quot;</span>
+    <span class="s2">ordering</span><span class="s1">=</span><span class="s3">&quot;NONE&quot;</span>
+    <span class="s2">side</span><span class="s1">=</span><span class="s3">&quot;BOTH&quot;</span>
+
+<span class="s0"># Features are specific properties of the game environment, that you may want to declare you require. This example declares</span>
+<span class="s0"># that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't</span>
+<span class="s0"># stop your mod loading on the server for example.</span>
+<span class="s0">#[features.gimrstowerattack]</span>
+<span class="s0">#openGLVersion=&quot;[3.2,)&quot;</span>
+</pre>
+</body>
+</html>

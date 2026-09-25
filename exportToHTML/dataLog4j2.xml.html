@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>dataLog4j2.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+dataLog4j2.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;UTF-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;Configuration </span><span class="s1">status</span><span class="s2">=&quot;warn&quot; </span><span class="s1">shutdownHook</span><span class="s2">=&quot;disable&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;filters&gt;</span>
+        <span class="s0">&lt;ThresholdFilter </span><span class="s1">level</span><span class="s2">=&quot;WARN&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;ACCEPT&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;NETWORK_PACKETS&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.networking:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;CLASSLOADING&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.classloading:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;LAUNCHPLUGIN&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.launchplugin:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;CLASSDUMP&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.classdump:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;AXFORM&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.axform:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;EVENTBUS&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.eventbus:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;DISTXFORM&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.distxform:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;SCAN&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.scan:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;REGISTRIES&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.registries:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;REGISTRYDUMP&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.registrydump:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;SPLASH&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.splash:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;RESOURCE-CACHE&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.resource.cache:-DENY}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;FORGEMOD&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.forgemod:-NEUTRAL}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;LOADING&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.loading:-NEUTRAL}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;MarkerFilter </span><span class="s1">marker</span><span class="s2">=&quot;CORE&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;${sys:forge.logging.marker.core:-NEUTRAL}&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/filters&gt;</span>
+    <span class="s0">&lt;Appenders&gt;</span>
+        <span class="s0">&lt;Console </span><span class="s1">name</span><span class="s2">=&quot;Console&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;PatternLayout&gt;</span>
+                <span class="s0">&lt;LoggerNamePatternSelector </span><span class="s1">defaultPattern</span><span class="s2">=&quot;%highlightForge{[%d{HH:mm:ss}] [%t/%level] [%c{2.}/%markerSimpleName]: %minecraftFormatting{%msg{nolookup}}%n%tEx}&quot;</span><span class="s0">&gt;</span>
+                    <span class="s4">&lt;!-- don't include the full logger name for Mojang's logs since they use full class names and it's very verbose --&gt;</span>
+                    <span class="s0">&lt;PatternMatch </span><span class="s1">key</span><span class="s2">=&quot;net.minecraft.&quot; </span><span class="s1">pattern</span><span class="s2">=&quot;%highlightForge{[%d{HH:mm:ss}] [%t/%level] [minecraft/%logger{1}]: %minecraftFormatting{%msg{nolookup}}%n%tEx}&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;PatternMatch </span><span class="s1">key</span><span class="s2">=&quot;com.mojang.&quot; </span><span class="s1">pattern</span><span class="s2">=&quot;%highlightForge{[%d{HH:mm:ss}] [%t/%level] [mojang/%logger{1}]: %minecraftFormatting{%msg{nolookup}}%n%tEx}&quot;</span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;/LoggerNamePatternSelector&gt;</span>
+            <span class="s0">&lt;/PatternLayout&gt;</span>
+        <span class="s0">&lt;/Console&gt;</span>
+        <span class="s0">&lt;Queue </span><span class="s1">name</span><span class="s2">=&quot;ServerGuiConsole&quot; </span><span class="s1">ignoreExceptions</span><span class="s2">=&quot;true&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;PatternLayout&gt;</span>
+                <span class="s0">&lt;LoggerNamePatternSelector </span><span class="s1">defaultPattern</span><span class="s2">=&quot;[%d{HH:mm:ss}] [%t/%level] [%c{2.}/%markerSimpleName]: %minecraftFormatting{%msg{nolookup}}{strip}%n&quot;</span><span class="s0">&gt;</span>
+                    <span class="s4">&lt;!-- don't include the full logger name for Mojang's logs since they use full class names and it's very verbose --&gt;</span>
+                    <span class="s0">&lt;PatternMatch </span><span class="s1">key</span><span class="s2">=&quot;net.minecraft.&quot; </span><span class="s1">pattern</span><span class="s2">=&quot;[%d{HH:mm:ss}] [%t/%level] [minecraft/%logger{1}]: %minecraftFormatting{%msg{nolookup}}{strip}%n&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;PatternMatch </span><span class="s1">key</span><span class="s2">=&quot;com.mojang.&quot; </span><span class="s1">pattern</span><span class="s2">=&quot;[%d{HH:mm:ss}] [%t/%level] [mojang/%logger{1}]: %minecraftFormatting{%msg{nolookup}}{strip}%n&quot;</span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;/LoggerNamePatternSelector&gt;</span>
+            <span class="s0">&lt;/PatternLayout&gt;</span>
+        <span class="s0">&lt;/Queue&gt;</span>
+        <span class="s0">&lt;RollingRandomAccessFile </span><span class="s1">name</span><span class="s2">=&quot;File&quot; </span><span class="s1">fileName</span><span class="s2">=&quot;logs/latest.log&quot; </span><span class="s1">filePattern</span><span class="s2">=&quot;logs/%d{yyyy-MM-dd}-%i.log.gz&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;PatternLayout </span><span class="s1">pattern</span><span class="s2">=&quot;[%d{ddMMMyyyy HH:mm:ss.SSS}] [%t/%level] [%logger/%markerSimpleName]: %minecraftFormatting{%msg{nolookup}}{strip}%n%xEx&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;Policies&gt;</span>
+                <span class="s0">&lt;TimeBasedTriggeringPolicy/&gt;</span>
+                <span class="s0">&lt;OnStartupTriggeringPolicy/&gt;</span>
+            <span class="s0">&lt;/Policies&gt;</span>
+            <span class="s0">&lt;DefaultRolloverStrategy </span><span class="s1">max</span><span class="s2">=&quot;99&quot; </span><span class="s1">fileIndex</span><span class="s2">=&quot;min&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/RollingRandomAccessFile&gt;</span>
+        <span class="s0">&lt;RollingRandomAccessFile </span><span class="s1">name</span><span class="s2">=&quot;DebugFile&quot; </span><span class="s1">fileName</span><span class="s2">=&quot;logs/debug.log&quot; </span><span class="s1">filePattern</span><span class="s2">=&quot;logs/debug-%i.log.gz&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;PatternLayout </span><span class="s1">pattern</span><span class="s2">=&quot;[%d{ddMMMyyyy HH:mm:ss.SSS}] [%t/%level] [%logger/%markerSimpleName]: %minecraftFormatting{%msg{nolookup}}{strip}%n%xEx&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;Policies&gt;</span>
+                <span class="s0">&lt;OnStartupTriggeringPolicy/&gt;</span>
+                <span class="s0">&lt;SizeBasedTriggeringPolicy </span><span class="s1">size</span><span class="s2">=&quot;200MB&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;/Policies&gt;</span>
+            <span class="s0">&lt;DefaultRolloverStrategy </span><span class="s1">max</span><span class="s2">=&quot;5&quot; </span><span class="s1">fileIndex</span><span class="s2">=&quot;min&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/RollingRandomAccessFile&gt;</span>
+    <span class="s0">&lt;/Appenders&gt;</span>
+    <span class="s0">&lt;Loggers&gt;</span>
+        <span class="s4">&lt;!-- make sure mojang's logging is set to 'info' so that their LOGGER.isDebugEnabled() behavior isn't active --&gt;</span>
+        <span class="s0">&lt;Logger </span><span class="s1">level</span><span class="s2">=&quot;${sys:forge.logging.mojang.level:-info}&quot; </span><span class="s1">name</span><span class="s2">=&quot;com.mojang&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;Logger </span><span class="s1">level</span><span class="s2">=&quot;${sys:forge.logging.mojang.level:-info}&quot; </span><span class="s1">name</span><span class="s2">=&quot;net.minecraft&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;Logger </span><span class="s1">level</span><span class="s2">=&quot;${sys:forge.logging.classtransformer.level:-info}&quot; </span><span class="s1">name</span><span class="s2">=&quot;cpw.mods.modlauncher.ClassTransformer&quot;</span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- Netty reflects into JDK internals, and it's causing useless DEBUG-level error stacktraces. We just ignore them --&gt;</span>
+        <span class="s0">&lt;Logger </span><span class="s1">name</span><span class="s2">=&quot;io.netty.util.internal.PlatformDependent0&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;filters&gt;</span>
+                <span class="s0">&lt;RegexFilter </span><span class="s1">regex</span><span class="s2">=&quot;^direct buffer constructor: unavailable$&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;DENY&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot; </span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;RegexFilter </span><span class="s1">regex</span><span class="s2">=&quot;^jdk\.internal\.misc\.Unsafe\.allocateUninitializedArray\(int\): unavailable$&quot; </span><span class="s1">onMatch</span><span class="s2">=&quot;DENY&quot; </span><span class="s1">onMismatch</span><span class="s2">=&quot;NEUTRAL&quot; </span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;/filters&gt;</span>
+        <span class="s0">&lt;/Logger&gt;</span>
+
+        <span class="s0">&lt;Root </span><span class="s1">level</span><span class="s2">=&quot;DEBUG&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;AppenderRef </span><span class="s1">ref</span><span class="s2">=&quot;Console&quot; </span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;AppenderRef </span><span class="s1">ref</span><span class="s2">=&quot;ServerGuiConsole&quot; </span><span class="s1">level</span><span class="s2">=&quot;${sys:forge.logging.console.level:-info}&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;AppenderRef </span><span class="s1">ref</span><span class="s2">=&quot;File&quot; </span><span class="s1">level</span><span class="s2">=&quot;${sys:forge.logging.file.level:-info}&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;AppenderRef </span><span class="s1">ref</span><span class="s2">=&quot;DebugFile&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/Root&gt;</span>
+    <span class="s0">&lt;/Loggers&gt;</span>
+<span class="s0">&lt;/Configuration&gt;</span>
+</pre>
+</body>
+</html>

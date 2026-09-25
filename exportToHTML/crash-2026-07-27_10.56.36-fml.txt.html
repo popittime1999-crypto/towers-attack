@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>crash-2026-07-27_10.56.36-fml.txt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+crash-2026-07-27_10.56.36-fml.txt</font>
+</center></td></tr></table>
+<pre><span class="s0">---- Minecraft Crash Report ----</span>
+<span class="s0">// There are four lights!</span>
+
+<span class="s0">Time: 2026-07-27 10:56:36</span>
+<span class="s0">Description: Mod loading error has occurred</span>
+
+<span class="s0">java.lang.Exception: Mod Loading has failed</span>
+	<span class="s0">at TRANSFORMER/neoforge@21.0.167/net.neoforged.neoforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:57) ~[neoforge-21.0.167.jar%23184!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/neoforge@21.0.167/net.neoforged.neoforge.client.loading.ClientModLoader.completeModLoading(ClientModLoader.java:123) ~[neoforge-21.0.167.jar%23184!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.buildInitialScreens(Minecraft.java:679) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.onGameLoadFinished(Minecraft.java:652) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.onResourceLoadFinished(Minecraft.java:647) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.lambda$new$7(Minecraft.java:635) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.Util.ifElse(Util.java:516) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.lambda$new$8(Minecraft.java:629) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/neoforge@21.0.167/net.neoforged.neoforge.client.loading.NeoForgeLoadingOverlay.render(NeoForgeLoadingOverlay.java:145) ~[neoforge-21.0.167.jar%23184!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:1087) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.runTick(Minecraft.java:1201) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.run(Minecraft.java:813) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.main.Main.main(Main.java:230) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}</span>
+	<span class="s0">at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.NeoForgeClientUserdevLaunchHandler.runService(NeoForgeClientUserdevLaunchHandler.java:23) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}</span>
+	<span class="s0">at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}</span>
+	<span class="s0">at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}</span>
+	<span class="s0">at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}</span>
+	<span class="s0">at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}</span>
+
+
+<span class="s0">A detailed walkthrough of the error, its code path and all known details is as follows:</span>
+<span class="s0">---------------------------------------------------------------------------------------</span>
+
+<span class="s0">-- Head --</span>
+<span class="s0">Thread: Render thread</span>
+<span class="s0">Stacktrace:</span>
+	<span class="s0">at TRANSFORMER/neoforge@21.0.167/net.neoforged.neoforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:57) ~[neoforge-21.0.167.jar%23184!/:?] {re:classloading}</span>
+<span class="s0">-- NO MOD INFO AVAILABLE --</span>
+<span class="s0">Details:</span>
+	<span class="s0">Mod File: NO FILE INFO</span>
+	<span class="s0">Failure message: fml.modloadingissue.javafml.dangling_entrypoint</span>
+	<span class="s0">Failure message arg 1: attacktowers</span>
+	<span class="s0">Failure message arg 2: com.gimr12.towers_attack.towers_attack</span>
+	<span class="s0">Failure message arg 3: C:\Users\popit\OneDrive\שולחן העבודה\mod_making\build\classes\java\main</span>
+	<span class="s0">Mod Version: NO MOD INFO AVAILABLE</span>
+	<span class="s0">Mod Issue URL: NOT PROVIDED</span>
+	<span class="s0">Exception message: MISSING EXCEPTION MESSAGE</span>
+<span class="s0">Stacktrace:</span>
+	<span class="s0">at TRANSFORMER/neoforge@21.0.167/net.neoforged.neoforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:57) ~[neoforge-21.0.167.jar%23184!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/neoforge@21.0.167/net.neoforged.neoforge.client.loading.ClientModLoader.completeModLoading(ClientModLoader.java:123) ~[neoforge-21.0.167.jar%23184!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.buildInitialScreens(Minecraft.java:679) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.onGameLoadFinished(Minecraft.java:652) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.onResourceLoadFinished(Minecraft.java:647) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.lambda$new$7(Minecraft.java:635) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.Util.ifElse(Util.java:516) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.lambda$new$8(Minecraft.java:629) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/neoforge@21.0.167/net.neoforged.neoforge.client.loading.NeoForgeLoadingOverlay.render(NeoForgeLoadingOverlay.java:145) ~[neoforge-21.0.167.jar%23184!/:?] {re:classloading}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:1087) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.runTick(Minecraft.java:1201) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.Minecraft.run(Minecraft.java:813) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at TRANSFORMER/minecraft@1.21/net.minecraft.client.main.Main.main(Main.java:230) ~[neoforge-21.0.167.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}</span>
+	<span class="s0">at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}</span>
+	<span class="s0">at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.NeoForgeClientUserdevLaunchHandler.runService(NeoForgeClientUserdevLaunchHandler.java:23) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/fml_loader@4.0.23/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.23.jar%23139!/:4.0] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.4.jar%23121!/:?] {}</span>
+	<span class="s0">at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}</span>
+	<span class="s0">at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}</span>
+	<span class="s0">at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}</span>
+	<span class="s0">at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}</span>
+	<span class="s0">at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}</span>
+
+
+<span class="s0">-- System Details --</span>
+<span class="s0">Details:</span>
+	<span class="s0">Minecraft Version: 1.21</span>
+	<span class="s0">Minecraft Version ID: 1.21</span>
+	<span class="s0">Operating System: Windows 11 (amd64) version 10.0</span>
+	<span class="s0">Java Version: 21.0.11, Eclipse Adoptium</span>
+	<span class="s0">Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium</span>
+	<span class="s0">Memory: 35277376 bytes (33 MiB) / 438304768 bytes (418 MiB) up to 4215275520 bytes (4020 MiB)</span>
+	<span class="s0">CPUs: 8</span>
+	<span class="s0">Processor Vendor: GenuineIntel</span>
+	<span class="s0">Processor Name: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz</span>
+	<span class="s0">Identifier: Intel64 Family 6 Model 140 Stepping 1</span>
+	<span class="s0">Microarchitecture: Tiger Lake</span>
+	<span class="s0">Frequency (GHz): 2.42</span>
+	<span class="s0">Number of physical packages: 1</span>
+	<span class="s0">Number of physical CPUs: 4</span>
+	<span class="s0">Number of logical CPUs: 8</span>
+	<span class="s0">Graphics card #0 name: Intel(R) Iris(R) Xe Graphics</span>
+	<span class="s0">Graphics card #0 vendor: Intel Corporation</span>
+	<span class="s0">Graphics card #0 VRAM (MiB): 2048.00</span>
+	<span class="s0">Graphics card #0 deviceId: VideoController1</span>
+	<span class="s0">Graphics card #0 versionInfo: 32.0.101.7088</span>
+	<span class="s0">Memory slot #0 capacity (MiB): 8192.00</span>
+	<span class="s0">Memory slot #0 clockSpeed (GHz): 3.20</span>
+	<span class="s0">Memory slot #0 type: DDR4</span>
+	<span class="s0">Memory slot #1 capacity (MiB): 8192.00</span>
+	<span class="s0">Memory slot #1 clockSpeed (GHz): 2.67</span>
+	<span class="s0">Memory slot #1 type: DDR4</span>
+	<span class="s0">Virtual memory max (MiB): 34510.34</span>
+	<span class="s0">Virtual memory used (MiB): 27335.52</span>
+	<span class="s0">Swap memory total (MiB): 18432.00</span>
+	<span class="s0">Swap memory used (MiB): 877.91</span>
+	<span class="s0">Space in storage for jna.tmpdir (MiB): &lt;path not set&gt;</span>
+	<span class="s0">Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): &lt;path not set&gt;</span>
+	<span class="s0">Space in storage for io.netty.native.workdir (MiB): &lt;path not set&gt;</span>
+	<span class="s0">Space in storage for java.io.tmpdir (MiB): available: 59346.40, total: 486823.31</span>
+	<span class="s0">Space in storage for workdir (MiB): available: 59346.40, total: 486823.31</span>
+	<span class="s0">JVM Flags: 0 total; </span>
+	<span class="s0">ModLauncher: 11.0.4+main.d2e20e43</span>
+	<span class="s0">ModLauncher launch target: forgeclientuserdev</span>
+	<span class="s0">ModLauncher services: </span>
+		<span class="s0">sponge-mixin-0.14.0+mixin.0.8.6.jar mixin PLUGINSERVICE </span>
+		<span class="s0">loader-4.0.23.jar slf4jfixer PLUGINSERVICE </span>
+		<span class="s0">loader-4.0.23.jar runtime_enum_extender PLUGINSERVICE </span>
+		<span class="s0">at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE </span>
+		<span class="s0">loader-4.0.23.jar runtimedistcleaner PLUGINSERVICE </span>
+		<span class="s0">modlauncher-11.0.4.jar mixin TRANSFORMATIONSERVICE </span>
+		<span class="s0">modlauncher-11.0.4.jar fml TRANSFORMATIONSERVICE </span>
+	<span class="s0">FML Language Providers: </span>
+		<span class="s0">javafml@4.0</span>
+		<span class="s0">lowcodefml@4.0</span>
+		<span class="s0">minecraft@4.0</span>
+	<span class="s0">Mod List: </span>
+		<span class="s0">neoforge-21.0.167.jar                             |Minecraft                     |minecraft                     |1.21                |Manifest: NOSIGNATURE</span>
+		<span class="s0">main                                              |Tower Attack                  |gimrstowerattack              |0.0.1               |Manifest: NOSIGNATURE</span>
+		<span class="s0">neoforge-21.0.167.jar                             |NeoForge                      |neoforge                      |21.0.167            |Manifest: NOSIGNATURE</span></pre>
+</body>
+</html>

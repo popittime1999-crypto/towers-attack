@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>build.yml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+build.yml</font>
+</center></td></tr></table>
+<pre><span class="s0">name</span><span class="s1">: </span><span class="s3">Build</span>
+
+<span class="s0">on</span><span class="s1">: [</span><span class="s3">push</span><span class="s1">, </span><span class="s3">pull_request</span><span class="s1">]</span>
+
+<span class="s0">jobs</span><span class="s1">:</span>
+  <span class="s0">build</span><span class="s1">:</span>
+    <span class="s0">runs-on</span><span class="s1">: </span><span class="s3">ubuntu-latest</span>
+    <span class="s0">steps</span><span class="s1">:</span>
+      <span class="s1">- </span><span class="s0">name</span><span class="s1">: </span><span class="s3">Checkout repository</span>
+        <span class="s0">uses</span><span class="s1">: </span><span class="s3">actions/checkout@v4</span>
+        <span class="s0">with</span><span class="s1">:</span>
+          <span class="s0">fetch-depth</span><span class="s1">: </span><span class="s3">0</span>
+          <span class="s0">fetch-tags</span><span class="s1">: </span><span class="s3">true</span>
+
+      <span class="s1">- </span><span class="s0">name</span><span class="s1">: </span><span class="s3">Setup JDK 21</span>
+        <span class="s0">uses</span><span class="s1">: </span><span class="s3">actions/setup-java@v4</span>
+        <span class="s0">with</span><span class="s1">:</span>
+          <span class="s0">java-version</span><span class="s1">: </span><span class="s4">'21'</span>
+          <span class="s0">distribution</span><span class="s1">: </span><span class="s4">'temurin'</span>
+
+      <span class="s1">- </span><span class="s0">name</span><span class="s1">: </span><span class="s3">Setup Gradle</span>
+        <span class="s0">uses</span><span class="s1">: </span><span class="s3">gradle/actions/setup-gradle@v4</span>
+
+      <span class="s1">- </span><span class="s0">name</span><span class="s1">: </span><span class="s3">Build with Gradle</span>
+        <span class="s0">run</span><span class="s1">: </span><span class="s3">./gradlew build</span></pre>
+</body>
+</html>

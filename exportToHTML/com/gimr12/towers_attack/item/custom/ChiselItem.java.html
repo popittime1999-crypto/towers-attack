@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>ChiselItem.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ChiselItem.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">gimr12</span><span class="s2">.</span><span class="s1">towers_attack</span><span class="s2">.</span><span class="s1">item</span><span class="s2">.</span><span class="s1">custom</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">gimr12</span><span class="s2">.</span><span class="s1">towers_attack</span><span class="s2">.</span><span class="s1">block</span><span class="s2">.</span><span class="s1">ModBlocks</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">server</span><span class="s2">.</span><span class="s1">level</span><span class="s2">.</span><span class="s1">ServerLevel</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">sounds</span><span class="s2">.</span><span class="s1">SoundEvent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">sounds</span><span class="s2">.</span><span class="s1">SoundEvents</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">sounds</span><span class="s2">.</span><span class="s1">SoundSource</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">InteractionResult</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">entity</span><span class="s2">.</span><span class="s1">EquipmentSlot</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">item</span><span class="s2">.</span><span class="s1">Item</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">item</span><span class="s2">.</span><span class="s1">context</span><span class="s2">.</span><span class="s1">UseOnContext</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">level</span><span class="s2">.</span><span class="s1">Level</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">level</span><span class="s2">.</span><span class="s1">block</span><span class="s2">.</span><span class="s1">Block</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">level</span><span class="s2">.</span><span class="s1">block</span><span class="s2">.</span><span class="s1">Blocks</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Map</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">ChiselItem </span><span class="s0">extends </span><span class="s1">Item  </span><span class="s2">{</span>
+    <span class="s0">private static final </span><span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">Block</span><span class="s2">, </span><span class="s1">Block</span><span class="s2">&gt; </span><span class="s1">CHISEL_MAP </span><span class="s2">=</span>
+            <span class="s1">Map</span><span class="s2">.</span><span class="s1">of</span><span class="s2">(</span>
+                    <span class="s1">Blocks</span><span class="s2">.</span><span class="s1">STONE</span><span class="s2">, </span><span class="s1">Blocks</span><span class="s2">.</span><span class="s1">STONE_BRICKS</span><span class="s2">,</span>
+                    <span class="s1">Blocks</span><span class="s2">.</span><span class="s1">ANDESITE</span><span class="s2">, </span><span class="s1">Blocks</span><span class="s2">.</span><span class="s1">POLISHED_ANDESITE</span><span class="s2">,</span>
+                    <span class="s1">Blocks</span><span class="s2">.</span><span class="s1">BLACKSTONE</span><span class="s2">, </span><span class="s1">Blocks</span><span class="s2">.</span><span class="s1">POLISHED_BLACKSTONE</span><span class="s2">,</span>
+                    <span class="s1">Blocks</span><span class="s2">.</span><span class="s1">COBBLED_DEEPSLATE</span><span class="s2">, </span><span class="s1">Blocks</span><span class="s2">.</span><span class="s1">POLISHED_DEEPSLATE</span><span class="s2">,</span>
+                    <span class="s1">Blocks</span><span class="s2">.</span><span class="s1">DIORITE</span><span class="s2">, </span><span class="s1">Blocks</span><span class="s2">.</span><span class="s1">POLISHED_DIORITE</span><span class="s2">,</span>
+                    <span class="s1">Blocks</span><span class="s2">.</span><span class="s1">GRANITE</span><span class="s2">, </span><span class="s1">Blocks</span><span class="s2">.</span><span class="s1">POLISHED_GRANITE</span><span class="s2">,</span>
+                    <span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">BADCRYSTAL_BLOCK</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(), </span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">BADCRYSTAL_BAR_BLOCK</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(),</span>
+                    <span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">POORCRYSTAL_BLOCK</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(), </span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">POORCRYSTAL_BAR_BLOCK</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(),</span>
+                    <span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">FINECRYSTAL_BLOCK</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(), </span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">FINECRYSTAL_BAR_BLOCK</span><span class="s2">.</span><span class="s1">get</span><span class="s2">()</span>
+
+            <span class="s2">);</span>
+
+    <span class="s0">public </span><span class="s1">ChiselItem</span><span class="s2">(</span><span class="s1">Properties properties</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">(</span><span class="s1">properties</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">InteractionResult useOn</span><span class="s2">(</span><span class="s1">UseOnContext context</span><span class="s2">) {</span>
+        <span class="s1">Level level </span><span class="s2">= </span><span class="s1">context</span><span class="s2">.</span><span class="s1">getLevel</span><span class="s2">();</span>
+        <span class="s1">Block clickedBlock </span><span class="s2">= </span><span class="s1">level</span><span class="s2">.</span><span class="s1">getBlockState</span><span class="s2">(</span><span class="s1">context</span><span class="s2">.</span><span class="s1">getClickedPos</span><span class="s2">()).</span><span class="s1">getBlock</span><span class="s2">();</span>
+
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">CHISEL_MAP</span><span class="s2">.</span><span class="s1">containsKey</span><span class="s2">(</span><span class="s1">clickedBlock</span><span class="s2">)){</span>
+            <span class="s0">if</span><span class="s2">(!</span><span class="s1">level</span><span class="s2">.</span><span class="s1">isClientSide</span><span class="s2">()){</span>
+                <span class="s1">level</span><span class="s2">.</span><span class="s1">setBlockAndUpdate</span><span class="s2">(</span><span class="s1">context</span><span class="s2">.</span><span class="s1">getClickedPos</span><span class="s2">(), </span><span class="s1">CHISEL_MAP</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">clickedBlock</span><span class="s2">).</span><span class="s1">defaultBlockState</span><span class="s2">());</span>
+
+                <span class="s1">context</span><span class="s2">.</span><span class="s1">getItemInHand</span><span class="s2">().</span><span class="s1">hurtAndBreak</span><span class="s2">(</span><span class="s3">1</span><span class="s2">, ((</span><span class="s1">ServerLevel</span><span class="s2">) </span><span class="s1">level</span><span class="s2">), </span><span class="s1">context</span><span class="s2">.</span><span class="s1">getPlayer</span><span class="s2">(),</span>
+                        <span class="s1">item -&gt; context</span><span class="s2">.</span><span class="s1">getPlayer</span><span class="s2">().</span><span class="s1">onEquippedItemBroken</span><span class="s2">(</span><span class="s1">item</span><span class="s2">, </span><span class="s1">EquipmentSlot</span><span class="s2">.</span><span class="s1">MAINHAND</span><span class="s2">));</span>
+
+                <span class="s1">level</span><span class="s2">.</span><span class="s1">playSound</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s1">context</span><span class="s2">.</span><span class="s1">getClickedPos</span><span class="s2">(), </span><span class="s1">SoundEvents</span><span class="s2">.</span><span class="s1">GRINDSTONE_USE</span><span class="s2">, </span><span class="s1">SoundSource</span><span class="s2">.</span><span class="s1">BLOCKS</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s0">return </span><span class="s1">InteractionResult</span><span class="s2">.</span><span class="s1">SUCCESS</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>neoforge-server.toml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+neoforge-server.toml</font>
+</center></td></tr></table>
+<pre><span class="s0">#Set this to true to remove any BlockEntity that throws an error in its update method instead of closing the server and reporting a crash log. BE WARNED THIS COULD SCREW UP EVERYTHING USE SPARINGLY WE ARE NOT RESPONSIBLE FOR DAMAGES.</span>
+<span class="s2">removeErroringBlockEntities </span><span class="s1">= </span><span class="s3">false</span>
+<span class="s0">#Set this to true to remove any Entity (Note: Does not include BlockEntities) that throws an error in its tick method instead of closing the server and reporting a crash log. BE WARNED THIS COULD SCREW UP EVERYTHING USE SPARINGLY WE ARE NOT RESPONSIBLE FOR DAMAGES.</span>
+<span class="s2">removeErroringEntities </span><span class="s1">= </span><span class="s3">false</span>
+<span class="s0">#Set this to true to check the entire entity's collision bounding box for ladders instead of just the block they are in. Causes noticeable differences in mechanics so default is vanilla behavior. Default: false.</span>
+<span class="s2">fullBoundingBoxLadders </span><span class="s1">= </span><span class="s3">false</span>
+<span class="s0">#The permission handler used by the server. Defaults to neoforge:default_handler if no such handler with that name is registered.</span>
+<span class="s2">permissionHandler </span><span class="s1">= </span><span class="s4">&quot;neoforge:default_handler&quot;</span>
+<span class="s0">#Set this to true to enable advertising the dedicated server to local LAN clients so that it shows up in the Multiplayer screen automatically.</span>
+<span class="s2">advertiseDedicatedServerToLan </span><span class="s1">= </span><span class="s3">true</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<html>
+<head>
+<title>shelved.patch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+shelved.patch</font>
+</center></td></tr></table>
+<pre><span class="s0">Index: src/main/resources/assets/examplemod/lang/en_us.json 
+=================================================================== 
+diff --git a/src/main/resources/assets/examplemod/lang/en_us.json b/src/main/resources/assets/examplemod/lang/en_us.json 
+deleted file mode 100644 
+--- a/src/main/resources/assets/examplemod/lang/en_us.json  (revision bb63d5031377289315f9d10537c357468af73f92) 
++++ /dev/null   (revision bb63d5031377289315f9d10537c357468af73f92) 
+@@ -1,5 +0,0 @@ 
+-{ 
+-  &quot;itemGroup.examplemod&quot;: &quot;Example Mod Tab&quot;, 
+-  &quot;block.examplemod.example_block&quot;: &quot;Example Block&quot;, 
+-  &quot;item.examplemod.example_item&quot;: &quot;Example Item&quot; 
+-} 
+Index: src/main/resources/assets/gimrstowerattack/blockstates/badcrystal_block.json 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/resources/assets/gimrstowerattack/blockstates/badcrystal_block.json b/src/main/resources/assets/gimrstowerattack/blockstates/badcrystal_block.json 
+new file mode 100644 
+--- /dev/null   (date 1785104968327) 
++++ b/src/main/resources/assets/gimrstowerattack/blockstates/badcrystal_block.json  (date 1785104968327) 
+@@ -0,0 +1,7 @@ 
++{ 
++  &quot;variants&quot;: { 
++    &quot;&quot;: { 
++      &quot;model&quot;: &quot;gimrstowerattack:block/badcrystal_block&quot; 
++    } 
++  } 
++} 
+\ No newline at end of file 
+Index: src/main/resources/assets/gimrstowerattack/models/block/badcrystal_block.json 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/resources/assets/gimrstowerattack/models/block/badcrystal_block.json b/src/main/resources/assets/gimrstowerattack/models/block/badcrystal_block.json 
+new file mode 100644 
+--- /dev/null   (date 1785105176214) 
++++ b/src/main/resources/assets/gimrstowerattack/models/block/badcrystal_block.json (date 1785105176214) 
+@@ -0,0 +1,6 @@ 
++{ 
++  &quot;parent&quot;: &quot;minecraft:block/cube_all&quot;, 
++  &quot;textures&quot;: { 
++    &quot;all&quot;: &quot;gimrstowerattack:block/badcrystal_block&quot; 
++  } 
++} 
+\ No newline at end of file 
+Index: src/main/resources/assets/gimrstowerattack/models/item/poorcrystal.json 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/resources/assets/gimrstowerattack/models/item/poorcrystal.json b/src/main/resources/assets/gimrstowerattack/models/item/poorcrystal.json 
+new file mode 100644 
+--- /dev/null   (date 1785102058607) 
++++ b/src/main/resources/assets/gimrstowerattack/models/item/poorcrystal.json   (date 1785102058607) 
+@@ -0,0 +1,6 @@ 
++{ 
++  &quot;parent&quot;: &quot;minecraft:item/generated&quot;, 
++  &quot;textures&quot;: { 
++    &quot;layer0&quot;: &quot;gimrstowerattack:item/poorcrystal&quot; 
++  } 
++} 
+\ No newline at end of file 
+Index: src/main/java/com/gimr12/towers_attack/block/ModBlocks.java 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/java/com/gimr12/towers_attack/block/ModBlocks.java b/src/main/java/com/gimr12/towers_attack/block/ModBlocks.java 
+new file mode 100644 
+--- /dev/null   (date 1785103967491) 
++++ b/src/main/java/com/gimr12/towers_attack/block/ModBlocks.java   (date 1785103967491) 
+@@ -0,0 +1,38 @@ 
++package com.gimr12.towers_attack.block; 
++ 
++import com.gimr12.towers_attack.Towers_Attack; 
++import com.gimr12.towers_attack.item.ModItems; 
++import net.minecraft.world.item.BlockItem; 
++import net.minecraft.world.item.Item; 
++import net.minecraft.world.level.block.Block; 
++import net.minecraft.world.level.block.SoundType; 
++import net.minecraft.world.level.block.state.BlockBehaviour; 
++import net.neoforged.bus.api.IEventBus; 
++import net.neoforged.neoforge.registries.DeferredBlock; 
++import net.neoforged.neoforge.registries.DeferredRegister; 
++ 
++import java.util.function.Supplier; 
++ 
++public class ModBlocks { 
++    public static final DeferredRegister.Blocks BLOCKS = 
++            DeferredRegister.createBlocks(Towers_Attack.MOD_ID); 
++ 
++    public static final DeferredBlock&lt;Block&gt; BADCRYSTAL_BLOCK = registerBlock(&quot;badcrystal_block&quot;, 
++            () -&gt; new Block(BlockBehaviour.Properties.of() 
++                    .strength(4f).sound(SoundType.ANCIENT_DEBRIS).lightLevel(state -&gt; 3))); 
++ 
++ 
++    private static &lt;T extends Block&gt; DeferredBlock&lt;T&gt; registerBlock(String name, Supplier&lt;T&gt; block) { 
++        DeferredBlock&lt;T&gt; toReturn = BLOCKS.register(name, block); 
++        registerBlockItem(name, toReturn); 
++        return toReturn; 
++    } 
++ 
++    private static &lt;T extends Block&gt; void registerBlockItem(String name, DeferredBlock&lt;T&gt; block) { 
++        ModItems.ITEMS.register(name,() -&gt; new BlockItem(block.get(),new Item.Properties())); 
++    } 
++ 
++    public static void register(IEventBus eventBus) { 
++        BLOCKS.register(eventBus); 
++    } 
++} 
+Index: src/main/resources/assets/gimrstowerattack/lang/en_us.json 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/resources/assets/gimrstowerattack/lang/en_us.json b/src/main/resources/assets/gimrstowerattack/lang/en_us.json 
+new file mode 100644 
+--- /dev/null   (date 1785105430373) 
++++ b/src/main/resources/assets/gimrstowerattack/lang/en_us.json    (date 1785105430373) 
+@@ -0,0 +1,6 @@ 
++{ 
++  &quot;item.gimrstowerattack.badcrystal&quot;: &quot;Bad Crystal&quot;, 
++  &quot;item.gimrstowerattack.poorcrystal&quot;: &quot;Poor Crystal&quot;, 
++ 
++  &quot;block.gimrstowerattack.badcrystal_block&quot;: &quot;Bad Crystal Block&quot; 
++} 
+\ No newline at end of file 
+Index: src/main/resources/assets/gimrstowerattack/models/item/badcrystal.json 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/resources/assets/gimrstowerattack/models/item/badcrystal.json b/src/main/resources/assets/gimrstowerattack/models/item/badcrystal.json 
+new file mode 100644 
+--- /dev/null   (date 1785100639551) 
++++ b/src/main/resources/assets/gimrstowerattack/models/item/badcrystal.json    (date 1785100639551) 
+@@ -0,0 +1,6 @@ 
++{ 
++  &quot;parent&quot;: &quot;minecraft:item/generated&quot;, 
++  &quot;textures&quot;: { 
++    &quot;layer0&quot;: &quot;gimrstowerattack:item/badcrystal&quot; 
++  } 
++} 
+\ No newline at end of file 
+Index: gradle.properties 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP 
+&lt;+&gt;# Sets default memory used for gradle commands. Can be overridden by user or command line properties.\r\norg.gradle.jvmargs=-Xmx1G\r\norg.gradle.daemon=true\r\norg.gradle.parallel=true\r\norg.gradle.caching=true\r\norg.gradle.configuration-cache=true\r\n\r\n#read more on this at https://github.com/neoforged/ModDevGradle?tab=readme-ov-file#better-minecraft-parameter-names--javadoc-parchment\r\n# you can also find the latest versions at: https://parchmentmc.org/docs/getting-started\r\nparchment_minecraft_version=1.21\r\nparchment_mappings_version=2024.11.10\r\n# Environment Properties\r\n# You can find the latest versions here: https://projects.neoforged.net/neoforged/neoforge\r\n# The Minecraft version must agree with the Neo version to get a valid artifact\r\nminecraft_version=1.21\r\n# The Minecraft version range can use any release version of Minecraft as bounds.\r\n# Snapshots, pre-releases, and release candidates are not guaranteed to sort properly\r\n# as they do not follow standard versioning conventions.\r\nminecraft_version_range=[1.21]\r\n# The Neo version must agree with the Minecraft version to get a valid artifact\r\nneo_version=21.0.167\r\n# The loader version range can only use the major version of FML as bounds\r\nloader_version_range=[1,)\r\n\r\n## Mod Properties\r\n\r\n# The unique mod identifier for the mod. Must be lowercase in English locale. Must fit the regex [a-z][a-z0-9_]{1,63}\r\n# Must match the String constant located in the main mod class annotated with @Mod.\r\nmod_id=examplemod\r\n# The human-readable display name for the mod.\r\nmod_name=Example Mod\r\n# The license of the mod. Review your options at https://choosealicense.com/. All Rights Reserved is the default.\r\nmod_license=All Rights Reserved\r\n# The mod version. See https://semver.org/\r\nmod_version=1.0.0\r\n# The group ID for the mod. It is only important when publishing as an artifact to a Maven repository.\r\n# This should match the base package used for the mod sources.\r\n# See https://maven.apache.org/guides/mini/guide-naming-conventions.html\r\nmod_group_id=com.example.examplemod\r\n 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;ISO-8859-1 
+=================================================================== 
+diff --git a/gradle.properties b/gradle.properties 
+--- a/gradle.properties (revision bb63d5031377289315f9d10537c357468af73f92) 
++++ b/gradle.properties (date 1785098674572) 
+@@ -26,14 +26,16 @@ 
+  
+ # The unique mod identifier for the mod. Must be lowercase in English locale. Must fit the regex [a-z][a-z0-9_]{1,63} 
+ # Must match the String constant located in the main mod class annotated with @Mod. 
+-mod_id=examplemod 
++mod_id=gimrstowerattack 
+ # The human-readable display name for the mod. 
+-mod_name=Example Mod 
++mod_name=Tower Attack 
+ # The license of the mod. Review your options at https://choosealicense.com/. All Rights Reserved is the default. 
+-mod_license=All Rights Reserved 
++mod_license=MIT 
+ # The mod version. See https://semver.org/ 
+-mod_version=1.0.0 
++mod_version=0.0.1 
+ # The group ID for the mod. It is only important when publishing as an artifact to a Maven repository. 
+ # This should match the base package used for the mod sources. 
+ # See https://maven.apache.org/guides/mini/guide-naming-conventions.html 
+-mod_group_id=com.example.examplemod 
++mod_group_id=com.gimr12.towers_attack 
++mod_authors=gimr12 
++mod_description=IDK yet, work in progress 
+\ No newline at end of file 
+Index: src/main/resources/assets/gimrstowerattack/models/item/badcrystal_block.json 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/resources/assets/gimrstowerattack/models/item/badcrystal_block.json b/src/main/resources/assets/gimrstowerattack/models/item/badcrystal_block.json 
+new file mode 100644 
+--- /dev/null   (date 1785105727507) 
++++ b/src/main/resources/assets/gimrstowerattack/models/item/badcrystal_block.json  (date 1785105727507) 
+@@ -0,0 +1,3 @@ 
++{ 
++  &quot;parent&quot;: &quot;gimrstowerattack:block/badcrystal_block&quot; 
++} 
+\ No newline at end of file 
+Index: src/main/java/com/example/examplemod/Config.java 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/java/com/example/examplemod/Config.java b/src/main/java/com/gimr12/towers_attack/Config.java 
+rename from src/main/java/com/example/examplemod/Config.java 
+rename to src/main/java/com/gimr12/towers_attack/Config.java 
+--- a/src/main/java/com/example/examplemod/Config.java  (revision bb63d5031377289315f9d10537c357468af73f92) 
++++ b/src/main/java/com/gimr12/towers_attack/Config.java    (date 1785097471199) 
+@@ -1,15 +1,9 @@ 
+-package com.example.examplemod; 
++package com.gimr12.towers_attack; 
+  
+ import java.util.List; 
+-import java.util.Set; 
+-import java.util.stream.Collectors; 
+  
+ import net.minecraft.core.registries.BuiltInRegistries; 
+ import net.minecraft.resources.ResourceLocation; 
+-import net.minecraft.world.item.Item; 
+-import net.neoforged.bus.api.SubscribeEvent; 
+-import net.neoforged.fml.common.EventBusSubscriber; 
+-import net.neoforged.fml.event.config.ModConfigEvent; 
+ import net.neoforged.neoforge.common.ModConfigSpec; 
+  
+ // An example config class. This is not required, but it's a good idea to have one to keep your config organized. 
+Index: src/main/java/com/example/examplemod/ExampleMod.java 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/java/com/example/examplemod/ExampleMod.java b/src/main/java/com/gimr12/towers_attack/Towers_Attack.java 
+rename from src/main/java/com/example/examplemod/ExampleMod.java 
+rename to src/main/java/com/gimr12/towers_attack/Towers_Attack.java 
+--- a/src/main/java/com/example/examplemod/ExampleMod.java  (revision bb63d5031377289315f9d10537c357468af73f92) 
++++ b/src/main/java/com/gimr12/towers_attack/Towers_Attack.java (date 1785104314269) 
+@@ -1,21 +1,12 @@ 
+-package com.example.examplemod; 
++package com.gimr12.towers_attack; 
+  
++import com.gimr12.towers_attack.block.ModBlocks; 
++import com.gimr12.towers_attack.item.ModItems; 
++import net.minecraft.world.item.CreativeModeTabs; 
+ import org.slf4j.Logger; 
+  
+ import com.mojang.logging.LogUtils; 
+  
+-import net.minecraft.core.registries.BuiltInRegistries; 
+-import net.minecraft.core.registries.Registries; 
+-import net.minecraft.network.chat.Component; 
+-import net.minecraft.world.food.FoodProperties; 
+-import net.minecraft.world.item.BlockItem; 
+-import net.minecraft.world.item.CreativeModeTab; 
+-import net.minecraft.world.item.CreativeModeTabs; 
+-import net.minecraft.world.item.Item; 
+-import net.minecraft.world.level.block.Block; 
+-import net.minecraft.world.level.block.Blocks; 
+-import net.minecraft.world.level.block.state.BlockBehaviour; 
+-import net.minecraft.world.level.material.MapColor; 
+ import net.neoforged.api.distmarker.Dist; 
+ import net.neoforged.bus.api.IEventBus; 
+ import net.neoforged.bus.api.SubscribeEvent; 
+@@ -24,66 +15,31 @@ 
+ import net.neoforged.fml.ModContainer; 
+ import net.neoforged.fml.common.EventBusSubscriber; 
+ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent; 
+-import net.minecraft.client.Minecraft; 
+ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent; 
+ import net.neoforged.neoforge.common.NeoForge; 
+ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent; 
+ import net.neoforged.neoforge.event.server.ServerStartingEvent; 
+-import net.neoforged.neoforge.registries.DeferredBlock; 
+-import net.neoforged.neoforge.registries.DeferredHolder; 
+-import net.neoforged.neoforge.registries.DeferredItem; 
+-import net.neoforged.neoforge.registries.DeferredRegister; 
+  
+ // The value here should match an entry in the META-INF/neoforge.mods.toml file 
+-@Mod(ExampleMod.MODID) 
+-public class ExampleMod { 
+-    // Define mod id in a common place for everything to reference 
+-    public static final String MODID = &quot;examplemod&quot;; 
+-    // Directly reference a slf4j logger 
++@Mod(Towers_Attack.MOD_ID) 
++public class Towers_Attack { 
++    public static final String MOD_ID = &quot;gimrstowerattack&quot;; 
+     public static final Logger LOGGER = LogUtils.getLogger(); 
+-    // Create a Deferred Register to hold Blocks which will all be registered under the &quot;examplemod&quot; namespace 
+-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID); 
+-    // Create a Deferred Register to hold Items which will all be registered under the &quot;examplemod&quot; namespace 
+-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID); 
+-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the &quot;examplemod&quot; namespace 
+-    public static final DeferredRegister&lt;CreativeModeTab&gt; CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID); 
+- 
+-    // Creates a new Block with the id &quot;examplemod:example_block&quot;, combining the namespace and path 
+-    public static final DeferredBlock&lt;Block&gt; EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock(&quot;example_block&quot;, BlockBehaviour.Properties.of().mapColor(MapColor.STONE)); 
+-    // Creates a new BlockItem with the id &quot;examplemod:example_block&quot;, combining the namespace and path 
+-    public static final DeferredItem&lt;BlockItem&gt; EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem(&quot;example_block&quot;, EXAMPLE_BLOCK); 
+- 
+-    // Creates a new food item with the id &quot;examplemod:example_id&quot;, nutrition 1 and saturation 2 
+-    public static final DeferredItem&lt;Item&gt; EXAMPLE_ITEM = ITEMS.registerSimpleItem(&quot;example_item&quot;, new Item.Properties().food(new FoodProperties.Builder() 
+-            .alwaysEdible().nutrition(1).saturationModifier(2f).build())); 
+- 
+-    // Creates a creative tab with the id &quot;examplemod:example_tab&quot; for the example item, that is placed after the combat tab 
+-    public static final DeferredHolder&lt;CreativeModeTab, CreativeModeTab&gt; EXAMPLE_TAB = CREATIVE_MODE_TABS.register(&quot;example_tab&quot;, () -&gt; CreativeModeTab.builder() 
+-            .title(Component.translatable(&quot;itemGroup.examplemod&quot;)) //The language key for the title of your CreativeModeTab 
+-            .withTabsBefore(CreativeModeTabs.COMBAT) 
+-            .icon(() -&gt; EXAMPLE_ITEM.get().getDefaultInstance()) 
+-            .displayItems((parameters, output) -&gt; { 
+-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event 
+-            }).build()); 
+  
+     // The constructor for the mod class is the first code that is run when your mod is loaded. 
+     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically. 
+-    public ExampleMod(IEventBus modEventBus, ModContainer modContainer) { 
++    public Towers_Attack(IEventBus modEventBus, ModContainer modContainer) { 
+         // Register the commonSetup method for modloading 
+         modEventBus.addListener(this::commonSetup); 
+  
+-        // Register the Deferred Register to the mod event bus so blocks get registered 
+-        BLOCKS.register(modEventBus); 
+-        // Register the Deferred Register to the mod event bus so items get registered 
+-        ITEMS.register(modEventBus); 
+-        // Register the Deferred Register to the mod event bus so tabs get registered 
+-        CREATIVE_MODE_TABS.register(modEventBus); 
+- 
+         // Register ourselves for server and other game events we are interested in. 
+         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events. 
+         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below. 
+         NeoForge.EVENT_BUS.register(this); 
+  
++        ModItems.register(modEventBus); 
++        ModBlocks.register(modEventBus); 
++ 
+         // Register the item to a creative tab 
+         modEventBus.addListener(this::addCreative); 
+  
+@@ -92,40 +48,33 @@ 
+     } 
+  
+     private void commonSetup(FMLCommonSetupEvent event) { 
+-        // Some common setup code 
+-        LOGGER.info(&quot;HELLO FROM COMMON SETUP&quot;); 
+- 
+-        if (Config.LOG_DIRT_BLOCK.getAsBoolean()) { 
+-            LOGGER.info(&quot;DIRT BLOCK &gt;&gt; {}&quot;, BuiltInRegistries.BLOCK.getKey(Blocks.DIRT)); 
+-        } 
+  
+-        LOGGER.info(&quot;{}{}&quot;, Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt()); 
+- 
+-        Config.ITEM_STRINGS.get().forEach((item) -&gt; LOGGER.info(&quot;ITEM &gt;&gt; {}&quot;, item)); 
+     } 
+  
+     // Add the example block item to the building blocks tab 
+     private void addCreative(BuildCreativeModeTabContentsEvent event) { 
+-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) { 
+-            event.accept(EXAMPLE_BLOCK_ITEM); 
++        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){ 
++            event.accept(ModItems.BADCRYSTAL); 
++            event.accept(ModItems.POORCRYSTAL); 
++        } 
++ 
++        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){ 
++            event.accept(ModBlocks.BADCRYSTAL_BLOCK); 
+         } 
+     } 
+  
+     // You can use SubscribeEvent and let the Event Bus discover methods to call 
+     @SubscribeEvent 
+     public void onServerStarting(ServerStartingEvent event) { 
+-        // Do something when the server starts 
+-        LOGGER.info(&quot;HELLO from server starting&quot;); 
++ 
+     } 
+  
+     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent 
+-    @EventBusSubscriber(modid = ExampleMod.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT) 
++    @EventBusSubscriber(modid = Towers_Attack.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT) 
+     static class ClientModEvents { 
+         @SubscribeEvent 
+         static void onClientSetup(FMLClientSetupEvent event) { 
+-            // Some client setup code 
+-            LOGGER.info(&quot;HELLO FROM CLIENT SETUP&quot;); 
+-            LOGGER.info(&quot;MINECRAFT NAME &gt;&gt; {}&quot;, Minecraft.getInstance().getUser().getName()); 
++ 
+         } 
+     } 
+-} 
++} 
+\ No newline at end of file 
+Index: src/main/java/com/gimr12/towers_attack/item/ModItems.java 
+IDEA additional info: 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP 
+&lt;+&gt;UTF-8 
+=================================================================== 
+diff --git a/src/main/java/com/gimr12/towers_attack/item/ModItems.java b/src/main/java/com/gimr12/towers_attack/item/ModItems.java 
+new file mode 100644 
+--- /dev/null   (date 1785106479970) 
++++ b/src/main/java/com/gimr12/towers_attack/item/ModItems.java (date 1785106479970) 
+@@ -0,0 +1,24 @@ 
++package com.gimr12.towers_attack.item; 
++ 
++import com.gimr12.towers_attack.Towers_Attack; 
++import net.minecraft.core.component.DataComponents; 
++import net.minecraft.world.item.Item; 
++import net.minecraft.world.item.Rarity; 
++import net.neoforged.bus.api.IEventBus; 
++import net.neoforged.neoforge.registries.DeferredItem; 
++import net.neoforged.neoforge.registries.DeferredRegister; 
++ 
++public class ModItems { 
++    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Towers_Attack.MOD_ID); 
++ 
++    public static final DeferredItem&lt;Item&gt; BADCRYSTAL = ITEMS.register(&quot;badcrystal&quot;, 
++            () -&gt; new Item(new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true))); 
++ 
++    public static final DeferredItem&lt;Item&gt; POORCRYSTAL = ITEMS.register(&quot;poorcrystal&quot;, 
++            () -&gt; new Item(new Item.Properties())); 
++ 
++ 
++    public static void register(IEventBus eventBus){ 
++        ITEMS.register(eventBus); 
++    } 
++} 
+</span></pre>
+</body>
+</html>

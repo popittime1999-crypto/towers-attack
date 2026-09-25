@@ -24,7 +24,7 @@ public class HighXpScrollItem extends Item {
         if (!level.isClientSide) {
             PlayerLeveling.addGP(player, this.gpAmount);
 
-            player.displayClientMessage(Component.literal("Gained " + this.gpAmount + " Grand Points!"), true);
+            player.displayClientMessage(Component.literal("Gained " + this.gpAmount + " XP Points!"), true);
 
             if (!player.getAbilities().instabuild) {
                 itemstack.shrink(1);

@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>ModCreativeModeTabs.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ModCreativeModeTabs.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">gimr12</span><span class="s2">.</span><span class="s1">towers_attack</span><span class="s2">.</span><span class="s1">item</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">gimr12</span><span class="s2">.</span><span class="s1">towers_attack</span><span class="s2">.</span><span class="s1">block</span><span class="s2">.</span><span class="s1">ModBlocks</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">gimr12</span><span class="s2">.</span><span class="s1">towers_attack</span><span class="s2">.</span><span class="s1">towers_attack</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">registries</span><span class="s2">.</span><span class="s1">Registries</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">network</span><span class="s2">.</span><span class="s1">chat</span><span class="s2">.</span><span class="s1">Component</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">resources</span><span class="s2">.</span><span class="s1">ResourceLocation</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">item</span><span class="s2">.</span><span class="s1">CreativeModeTab</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">minecraft</span><span class="s2">.</span><span class="s1">world</span><span class="s2">.</span><span class="s1">item</span><span class="s2">.</span><span class="s1">ItemStack</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">neoforged</span><span class="s2">.</span><span class="s1">bus</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">IEventBus</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">net</span><span class="s2">.</span><span class="s1">neoforged</span><span class="s2">.</span><span class="s1">neoforge</span><span class="s2">.</span><span class="s1">registries</span><span class="s2">.</span><span class="s1">DeferredRegister</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">function</span><span class="s2">.</span><span class="s1">Supplier</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">ModCreativeModeTabs </span><span class="s2">{</span>
+    <span class="s0">public static final </span><span class="s1">DeferredRegister</span><span class="s2">&lt;</span><span class="s1">CreativeModeTab</span><span class="s2">&gt; </span><span class="s1">CREATIVE_MODE_TAB </span><span class="s2">=</span>
+            <span class="s1">DeferredRegister</span><span class="s2">.</span><span class="s1">create</span><span class="s2">(</span><span class="s1">Registries</span><span class="s2">.</span><span class="s1">CREATIVE_MODE_TAB</span><span class="s2">, </span><span class="s1">towers_attack</span><span class="s2">.</span><span class="s1">MOD_ID</span><span class="s2">);</span>
+
+    <span class="s0">public static final </span><span class="s1">Supplier</span><span class="s2">&lt;</span><span class="s1">CreativeModeTab</span><span class="s2">&gt; </span><span class="s1">TOWER_ITMES_TAB </span><span class="s2">= </span><span class="s1">CREATIVE_MODE_TAB</span><span class="s2">.</span><span class="s1">register</span><span class="s2">(</span><span class="s3">&quot;tower_items_tab&quot;</span><span class="s2">,</span>
+            <span class="s2">() </span><span class="s1">-&gt; CreativeModeTab</span><span class="s2">.</span><span class="s1">builder</span><span class="s2">().</span><span class="s1">icon</span><span class="s2">(() </span><span class="s1">-&gt; </span><span class="s0">new </span><span class="s1">ItemStack</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">BADCRYSTAL</span><span class="s2">.</span><span class="s1">get</span><span class="s2">()))</span>
+                    <span class="s2">.</span><span class="s1">title</span><span class="s2">(</span><span class="s1">Component</span><span class="s2">.</span><span class="s1">translatable</span><span class="s2">(</span><span class="s3">&quot;creative_tab.gimrstowerattack.tower_items&quot;</span><span class="s2">))</span>
+                    <span class="s2">.</span><span class="s1">displayItems</span><span class="s2">((</span><span class="s1">itemDisplayParameters</span><span class="s2">, </span><span class="s1">output</span><span class="s2">) </span><span class="s1">-&gt; </span><span class="s2">{</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">BADCRYSTAL</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">POORCRYSTAL</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">FINECRYSTAL</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">BADCRYSTAL_BAR</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">POORCRYSTAL_BAR</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">FINECRYSTAL_BAR</span><span class="s2">);</span>
+
+                    <span class="s2">}).</span><span class="s1">build</span><span class="s2">());</span>
+
+
+    <span class="s0">public static final </span><span class="s1">Supplier</span><span class="s2">&lt;</span><span class="s1">CreativeModeTab</span><span class="s2">&gt; </span><span class="s1">TOWER_BLOCKS_TAB </span><span class="s2">= </span><span class="s1">CREATIVE_MODE_TAB</span><span class="s2">.</span><span class="s1">register</span><span class="s2">(</span><span class="s3">&quot;tower_blocks_tab&quot;</span><span class="s2">,</span>
+            <span class="s2">() </span><span class="s1">-&gt; CreativeModeTab</span><span class="s2">.</span><span class="s1">builder</span><span class="s2">().</span><span class="s1">icon</span><span class="s2">(() </span><span class="s1">-&gt; </span><span class="s0">new </span><span class="s1">ItemStack</span><span class="s2">(</span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">BADCRYSTAL_BLOCK</span><span class="s2">))</span>
+                    <span class="s2">.</span><span class="s1">withTabsBefore</span><span class="s2">(</span><span class="s1">ResourceLocation</span><span class="s2">.</span><span class="s1">fromNamespaceAndPath</span><span class="s2">(</span><span class="s1">towers_attack</span><span class="s2">.</span><span class="s1">MOD_ID</span><span class="s2">, </span><span class="s3">&quot;tower_items_tab&quot;</span><span class="s2">))</span>
+                    <span class="s2">.</span><span class="s1">title</span><span class="s2">(</span><span class="s1">Component</span><span class="s2">.</span><span class="s1">translatable</span><span class="s2">(</span><span class="s3">&quot;creative_tab.gimrstowerattack.tower_blocks&quot;</span><span class="s2">))</span>
+                    <span class="s2">.</span><span class="s1">displayItems</span><span class="s2">((</span><span class="s1">itemDisplayParameters</span><span class="s2">, </span><span class="s1">output</span><span class="s2">) </span><span class="s1">-&gt; </span><span class="s2">{</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">BADCRYSTAL_BLOCK</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">BADCRYSTAL_BAR_BLOCK</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">POORCRYSTAL_BLOCK</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">POORCRYSTAL_BAR_BLOCK</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">FINECRYSTAL_BLOCK</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModBlocks</span><span class="s2">.</span><span class="s1">FINECRYSTAL_BAR_BLOCK</span><span class="s2">);</span>
+                        <span class="s1">output</span><span class="s2">.</span><span class="s1">accept</span><span class="s2">(</span><span class="s1">ModItems</span><span class="s2">.</span><span class="s1">BLOCK_CHISEL</span><span class="s2">);</span>
+
+                    <span class="s2">}).</span><span class="s1">build</span><span class="s2">());</span>
+
+
+
+    <span class="s0">public static void </span><span class="s1">register</span><span class="s2">(</span><span class="s1">IEventBus eventBus</span><span class="s2">){</span>
+        <span class="s1">CREATIVE_MODE_TAB</span><span class="s2">.</span><span class="s1">register</span><span class="s2">(</span><span class="s1">eventBus</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

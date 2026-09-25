@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>neoforge-common.toml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+neoforge-common.toml</font>
+</center></td></tr></table>
+<pre><span class="s0">#A config option mainly for developers. Logs out modded item tags that do not have translations when running on integrated server. Format desired is tag.item.&lt;namespace&gt;.&lt;path&gt; for the translation key. Defaults to SILENCED.</span>
+<span class="s0">#Allowed Values: SILENCED, DEV_SHORT, DEV_VERBOSE, PROD_SHORT, PROD_VERBOSE</span>
+<span class="s2">logUntranslatedItemTagWarnings </span><span class="s1">= </span><span class="s3">&quot;SILENCED&quot;</span>
+<span class="s0">#A config option mainly for developers. Logs out modded tags that are using the 'forge' namespace when running on integrated server. Defaults to DEV_SHORT.</span>
+<span class="s0">#Allowed Values: SILENCED, DEV_SHORT, DEV_VERBOSE, PROD_SHORT, PROD_VERBOSE</span>
+<span class="s2">logLegacyTagWarnings </span><span class="s1">= </span><span class="s3">&quot;DEV_SHORT&quot;</span>
+</pre>
+</body>
+</html>
