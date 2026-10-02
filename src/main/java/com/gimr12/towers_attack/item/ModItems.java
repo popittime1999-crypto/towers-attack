@@ -20,4 +20,7 @@ public class ModItems {
 
     public static final DeferredItem<LowXpScrollItem> GODXPSCROLL = ITEMS.register("godxpscroll",
             () -> new LowXpScrollItem(new Item.Properties().stacksTo(64), 1000));
+
+    public static final DeferredItem<Item> PEACH = ITEMS.register("peach",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.PEACH)));
 }

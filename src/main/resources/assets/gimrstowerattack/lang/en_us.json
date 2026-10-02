@@ -3,5 +3,8 @@
   "item.gimrstowerattack.midxpscroll": "Mid Xp Scroll",
   "item.gimrstowerattack.highxpscroll": "High Xp Scroll",
   "item.gimrstowerattack.godxpscroll": "God Xp Scroll",
-  "creative_tab.gimrstowerattack.xp_scroll": "XP Scrolls"
+
+  "creative_tab.gimrstowerattack.xp_scroll": "XP Scrolls",
+
+  "item.gimrstowerattack.peach": "Peach"
 }

@@ -88,7 +88,7 @@ public class LevelingScreen extends Screen {
                 }));
 
         int closeSize = 18;
-        this.addRenderableWidget(StyledButton.danger(panelX + PANEL_WIDTH - closeSize - 4, panelY - headerButtonHeight - 6, closeSize, closeSize,
+        this.addRenderableWidget(StyledButton.danger(panelX + PANEL_WIDTH - closeSize - 3, panelY - headerButtonHeight - 6, closeSize, closeSize,
                 Component.literal("X"), b -> this.onClose()));
 
         Rect statsBox = statsBoxRect(panelX, panelY);

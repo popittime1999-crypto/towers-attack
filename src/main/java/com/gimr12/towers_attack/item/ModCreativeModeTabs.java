@@ -23,6 +23,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MIDXPSCROLL);
                         output.accept(ModItems.HIGHXPSCROLL);
                         output.accept(ModItems.GODXPSCROLL);
+                        output.accept(ModItems.PEACH);
 
                     }).build());
 
