@@ -4,6 +4,8 @@ import com.gimr12.towers_attack.event.MobClassifier.MobClass;
 import com.gimr12.towers_attack.leveling.PlayerLeveling;
 import com.gimr12.towers_attack.towers_attack;
 import com.gimr12.towers_attack.titles.TitleManager;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -21,34 +23,34 @@ public class GPEventHandler {
         LivingEntity killed = event.getEntity();
         if (killed instanceof Player) return;
 
-        if (event.getSource().getEntity() instanceof Player player) {
-            TitleManager.recordKill(player, killed);
-            int gp = calculateGpReward(player, killed);
-            if (gp > 0) {
-                PlayerLeveling.addGP(player, gp);
-            }
+        Entity credit = killed.getKillCredit();
+        if (!(credit instanceof Player player)) return;
+
+        TitleManager.recordKill(player, killed);
+        int gp = calculateGpReward(player, killed);
+        if (gp > 0) {
+            PlayerLeveling.addGP(player, gp);
+            player.displayClientMessage(Component.literal("+" + gp + " XP"), true);
         }
     }
 
-    /**
-     * GP = modifier x (sqrt(Max Health) x sqrt(Attack Damage))
-     *
-     * Modifier by mob class:
-     * - Passive: x0.5
-     * - Normal:  x1.0
-     * - Elite:   x1.5   (suggested addition - see MobClassifier)
-     * - Boss:    x2.0 on the player's first-ever kill of that boss, x1.5 every kill after
-     *
-     * Baby mobs additionally get x1.25 on top of whatever their base class modifier is.
-     */
     private static int calculateGpReward(Player killer, LivingEntity entity) {
-        double maxHealth = Math.max(0, entity.getAttributeValue(Attributes.MAX_HEALTH));
-        double attackDamage = Math.max(0, entity.getAttributeValue(Attributes.ATTACK_DAMAGE));
+        double maxHealth = entity.getAttribute(Attributes.MAX_HEALTH) != null
+                ? entity.getAttributeValue(Attributes.MAX_HEALTH)
+                : 10.0;
+
+        double attackDamage;
+        if (entity.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
+            attackDamage = Math.max(0, entity.getAttributeValue(Attributes.ATTACK_DAMAGE));
+        } else {
+            attackDamage = 5.0;
+        }
+
         double base = Math.sqrt(maxHealth) * Math.sqrt(attackDamage);
 
         MobClass mobClass = MobClassifier.classify(entity);
         double modifier = switch (mobClass) {
-            case PASSIVE -> 0.5;
+            case PASSIVE -> 1.0;
             case NORMAL -> 1.0;
             case ELITE -> 1.5;
             case BOSS -> BossKillTracker.isFirstKill(killer, entity) ? 2.0 : 1.5;
@@ -59,6 +61,6 @@ public class GPEventHandler {
         }
 
         int gp = (int) Math.round(modifier * base);
-        return Math.max(1, gp);
+        return gp;
     }
 }

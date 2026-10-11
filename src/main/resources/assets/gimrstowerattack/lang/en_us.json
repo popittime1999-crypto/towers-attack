@@ -5,6 +5,18 @@
   "item.gimrstowerattack.godxpscroll": "God Xp Scroll",
 
   "creative_tab.gimrstowerattack.xp_scroll": "XP Scrolls",
+  "creative_tab.gimrstowerattack.peaches": "Peaches",
 
-  "item.gimrstowerattack.peach": "Peach"
+  "item.gimrstowerattack.peach": "Peach",
+  "item.gimrstowerattack.golden_peach": "Golden Peach",
+  "block.gimrstowerattack.peach_log": "Peach Log",
+  "block.gimrstowerattack.stripped_peach_log": "Stripped Peach Log",
+  "block.gimrstowerattack.peach_wood": "Peach Wood",
+  "block.gimrstowerattack.stripped_peach_wood": "Stripped Peach Wood",
+  "block.gimrstowerattack.peach_leaves": "Peach Leaves",
+  "block.gimrstowerattack.peach_planks": "Peach Planks",
+  "block.gimrstowerattack.peach_sapling": "Peach Sapling",
+  "item.gimrstowerattack.goblin_spawn_egg": "Goblin Spawn Egg",
+
+  "entity.mccourse.goblin": "Goblin"
 }

@@ -1,7 +1,11 @@
 package com.gimr12.towers_attack;
 
+import com.gimr12.towers_attack.block.ModBlocks;
+import com.gimr12.towers_attack.entity.ModEntities;
+import com.gimr12.towers_attack.entity.client.GoblinRenderer;
 import com.gimr12.towers_attack.item.ModCreativeModeTabs;
 import com.gimr12.towers_attack.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import org.slf4j.Logger;
@@ -18,6 +22,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+
+import javax.swing.text.html.parser.Entity;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(towers_attack.MOD_ID)
@@ -40,13 +46,13 @@ public class towers_attack {
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register((modEventBus));
-
+        ModBlocks.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
+        ModEntities.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
         ModAttachments.register(modEventBus);
-        ModItems.ITEMS.register(modEventBus);
-
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -57,7 +63,9 @@ public class towers_attack {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(ModItems.GOBLIN_SPAWN_EGG);
+        }
     }
 
     @SubscribeEvent
@@ -70,6 +78,7 @@ public class towers_attack {
     static class ClientModEvents {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.GOBLIN.get(), GoblinRenderer::new);
 
         }
     }
